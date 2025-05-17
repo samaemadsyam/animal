@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    "header header"
+    "text image"
+    "menu menu"
+    "images images"
+    "footer footer"
+    ;
+  gap: 40px;
+  min-height: 100vh;
+  padding: 40px 80px;
+  background-color: white;
+}
+
+/* Header Area */
+.header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: -10px 40px;
+}
+
+.logo img {
+  width: 40px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #1e90ff;
+}
+
+.search-icon i {
+  font-size: 20px;
+  color: #333;
+  
+}
+
+
+.text {
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 40px;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #da1eff;
+}
+
+.hero-description {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+.image {
+  grid-area: image;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+/* الميديا كويري للشاشات الأصغر من 768px */
+@media (max-width: 110px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header"
+      "Nav"
+      "sidebar"
+      "footer";
+    padding: 10px;
+  }
+
+  header {
+    flex-direction: column;
+    font-size: 32px;
+    align-items: center;
+  }
+
+  .left-list {
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+
+  .left-list .list {
+    margin-left: 0;
+    font-size: 14px;
+  }
+
+  .right-list {
+    padding-left: 0;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .Nav {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+    text-align: center;
+  }
+
+  .text {
+    order: 2;
+  }
+
+  .profile img {
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  .paragraph {
+    font-size: 16px;
+    margin-left: 0;
+    padding: 0 10px;
+  }
+}
+.nav-menu {
+  grid-area: menu;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color:rgb(22, 129, 22);
+  border-radius: 20%;
+  font-weight: 500px;
+}
+
+.nav-menu a:hover {
+  color:white;
+  background-color: rgb(148, 238, 148);
+}
+.images {
+  grid-area: images;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  padding: 40px 80px;
+  align-items: center;
+}
+
+.images img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.images img:hover{
+  box-shadow: 0 4px 12px rgba(0, 0, 255, 0.548);
+}
+@media (max-width: 768px) {
+  .images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .images {
+    grid-template-columns: 1fr;
+  }
+}
+.footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  background-color: #59a32e;
+  color: white;
+  padding: 60px 80px;
+}
+
+.footer-section h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.footer-section a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.insta-grid {
+  display: grid;
+  grid-template-columns: 60px 60px 60px;
+  gap: 10px;
+}
+
+.insta-box {
+  background-color: #3a2ea3;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+}
+
+.contact form input,
+.contact form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+.contact form button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #fff;
+  color: #59a32e;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  background-color: #2b7003;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-icons {
+  margin-bottom: 10px;
+}
+
+.footer-icons i {
+  margin: 0 10px;
+  font-size: 20px;
+}
